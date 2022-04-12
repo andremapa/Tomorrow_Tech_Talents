@@ -13,6 +13,6 @@ public class QuestEleven {
 
         double installmentValue = purchaseAmount / 5;
 
-        System.out.printf("The installment value is %.2f in 5 times", installmentValue);
+        System.out.printf("\nThe installment value is %.5f in 5 times\n", installmentValue);
     }
 }
