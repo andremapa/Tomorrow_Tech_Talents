@@ -28,9 +28,12 @@ public class Product {
         return name;
     }
 
-    public Product addQuantityOnStock(int quantityOnStock) {
+    public String getBrand() {
+        return brand;
+    }
+
+    public void addQuantityOnStock(int quantityOnStock) {
         this.quantityOnStock+= quantityOnStock;
-        return this;
     }
 
     public Product setName(String name) {
@@ -82,4 +85,5 @@ public class Product {
     public int hashCode() {
         return getName().hashCode();
     }
+
 }

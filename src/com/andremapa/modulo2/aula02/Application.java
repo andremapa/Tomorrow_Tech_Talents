@@ -6,7 +6,7 @@ public class Application {
 
     public static void main(String[] args) {
 
-        Stock stock = new Stock();
+        Stock stock = new Stock("Stock One");
         stock.createProduct("Book 1", "Library", "TI", "World", 50);
         stock.createProduct("Book 1", "Library", "TI", "World", 50);
         stock.createProduct("Book 2", "Library", "TI", "World", 143);
