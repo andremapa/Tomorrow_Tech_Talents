@@ -1,9 +1,9 @@
-package com.andremapa.modulo2.aula01;
+package com.andremapa.modulo2.exercicio1;
 
 
 import java.util.List;
 
-import static com.andremapa.modulo2.aula01.Team.createTeam;
+import static com.andremapa.modulo2.exercicio1.Team.createTeam;
 
 public class Application {
 

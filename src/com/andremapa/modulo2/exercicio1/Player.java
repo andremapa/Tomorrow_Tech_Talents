@@ -1,4 +1,4 @@
-package com.andremapa.modulo2.aula01;
+package com.andremapa.modulo2.exercicio1;
 
 import java.time.LocalDate;
 import java.util.Random;
