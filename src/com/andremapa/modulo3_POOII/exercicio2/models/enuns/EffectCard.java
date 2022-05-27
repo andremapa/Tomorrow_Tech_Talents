@@ -1,0 +1,7 @@
+package com.andremapa.modulo3_POOII.exercicio2.models.enuns;
+
+public enum EffectCard {
+    BATTLECRY, CHOOSE_ONE, COMBO, DEATHRATTLE, DISCOVER,
+    DIVINE_SHIELD, FREEZE, LIFESTEAL, POISONOUS, OUTCAST,
+    OVERLOAD, RUSH, SILENCE, TAUNT, WINDFURY;
+}
