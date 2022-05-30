@@ -7,9 +7,7 @@ public class BoardParty implements IBoard {
 
     private List<Player> playerList = new ArrayList<>(5);
     private List<CardAttack[]> decks = new ArrayList<>(5);
-    private List<CardAttack> fieldAttack = new ArrayList<>(5);
-    private List<CardSpecial> fieldSpecial = new ArrayList<>(2);
-
+    private List<CardAttack> field = new ArrayList<>(34);
 
     public BoardParty( List<Player> playerList) {
         for (Player p: playerList) {
@@ -36,14 +34,8 @@ public class BoardParty implements IBoard {
     }
 
     private void addToField(CardAttack card){
-        if (card instanceof CardSpecial){
-            if(fieldSpecial.size() <= 2) {
-                fieldSpecial.add((CardSpecial) card);
-            }
-        } else {
-            if (fieldAttack.size() <= 5){
-                fieldAttack.add(card);
-            }
+        if (field.size() <= 34){
+            field.add(card);
         }
     }
 
