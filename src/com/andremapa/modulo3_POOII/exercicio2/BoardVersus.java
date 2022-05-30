@@ -36,15 +36,21 @@ public class BoardVersus implements IBoard{
     }
 
     private void addToField(CardAttack card){
-        if (card instanceof CardSpecial){
-            if(fieldSpecial.size() <= 2) {
-                fieldSpecial.add((CardSpecial) card);
-            }
-        } else {
-            if (fieldAttack.size() <= 5){
-                fieldAttack.add(card);
+        if (verifyField()) {
+            if (card instanceof CardSpecial) {
+                if (fieldSpecial.size() <= 2) {
+                    fieldSpecial.add((CardSpecial) card);
+                }
+            } else {
+                if (fieldAttack.size() <= 5) {
+                    fieldAttack.add(card);
+                }
             }
         }
+    }
+
+    private boolean verifyField(){
+        return fieldAttack.size() <= 5 || fieldSpecial.size() <= 2;
     }
 
     private void removeLoser(){

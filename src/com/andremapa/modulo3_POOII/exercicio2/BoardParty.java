@@ -22,7 +22,10 @@ public class BoardParty implements IBoard {
 
     @Override
     public boolean playACard(ICard iCard, Player player, int mana) {
-        return mana == player.getMana();
+        if (verifyField()) {
+            return mana == player.getMana();
+        }
+        return false;
     }
 
     @Override
@@ -37,6 +40,10 @@ public class BoardParty implements IBoard {
         if (field.size() <= 34){
             field.add(card);
         }
+    }
+
+    private boolean verifyField(){
+        return field.size() <= 34;
     }
 
     private void removeLoser(){
