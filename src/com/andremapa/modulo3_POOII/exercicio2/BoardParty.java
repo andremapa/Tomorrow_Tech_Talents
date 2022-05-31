@@ -10,14 +10,14 @@ public class BoardParty implements IBoard {
     private List<CardAttack> field = new ArrayList<>(34);
 
     public BoardParty( List<Player> playerList) {
-        for (Player p: playerList) {
-            decks.add(p.getDeckVersus());
-        }
+        insertDeck(playerList);
     }
 
     @Override
-    public <T> void insertDeck(T deck) {
-        System.out.println("Deck inserted");
+    public void insertDeck(List<Player> playerList) {
+        for (Player p: playerList) {
+            decks.add(p.getDeckVersus());
+        }
     }
 
     @Override

@@ -12,19 +12,22 @@ public class BoardVersus implements IBoard{
 
 
     public BoardVersus(List<Player> playerList) {
+        insertDeck(playerList);
+    }
+
+    @Override
+    public void insertDeck(List<Player> playerList) {
         for (Player p: playerList) {
             decks.add(p.getDeckVersus());
         }
     }
 
     @Override
-    public <T> void insertDeck(T deck) {
-        System.out.println("Deck inserted");
-    }
-
-    @Override
     public boolean playACard(ICard iCard, Player player, int mana) {
-        return mana == player.getMana();
+        if (verifyField()) {
+            return mana == player.getMana();
+        }
+        return false;
     }
 
     @Override
