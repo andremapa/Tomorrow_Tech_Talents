@@ -7,6 +7,7 @@ import java.util.List;
 public interface DatabaseRepository {
 
     void saveProduct(Product entity);
+    void saveProductList(List<Product> entities);
     List<Product> findAll();
     Product findById(int id);
     void deleteById(int id);

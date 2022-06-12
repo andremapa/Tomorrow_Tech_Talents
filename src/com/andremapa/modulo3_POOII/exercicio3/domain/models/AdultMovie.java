@@ -2,7 +2,7 @@ package com.andremapa.modulo3_POOII.exercicio3.domain.models;
 
 import java.util.Arrays;
 
-public class AdultMovie extends Movie{
+public class AdultMovie extends Movie implements AdultProduct{
 
     private boolean isAdult;
 
@@ -26,6 +26,7 @@ public class AdultMovie extends Movie{
         return this;
     }
 
+    @Override
     public boolean isAdult() {
         return isAdult;
     }

@@ -1,5 +1,6 @@
 package com.andremapa.modulo3_POOII.exercicio3.services;
 
+import com.andremapa.modulo3_POOII.exercicio3.domain.models.Book;
 import com.andremapa.modulo3_POOII.exercicio3.domain.models.CashRegister;
 import com.andremapa.modulo3_POOII.exercicio3.domain.models.Product;
 import com.andremapa.modulo3_POOII.exercicio3.domain.repositories.DatabaseRepository;
@@ -37,6 +38,14 @@ public class CashRegisterServiceImpl implements CashRegisterService{
         for (Double price: productList.stream().map(Product::getPrice).toList()) {
            finalPrice += price;
         }
-        cashRegister.addMoneyToCash(finalPrice);
+        cashRegister.addMoneyToCash(checkTheValueOfBookPurchases(productList, finalPrice));
+    }
+
+    private double checkTheValueOfBookPurchases(List<Product> productList, double price){
+        Book book = new Book("t", 0, 0);
+        if(productList.stream().allMatch(p -> p.getClass().isInstance(book))){
+            return price - (price*0.15);
+        }
+        return price;
     }
 }

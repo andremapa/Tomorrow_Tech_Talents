@@ -1,6 +1,6 @@
 package com.andremapa.modulo3_POOII.exercicio3.domain.models;
 
-public class AdultToy extends Toy{
+public class AdultToy extends Toy implements AdultProduct{
 
     private boolean isAdult;
 
@@ -21,6 +21,7 @@ public class AdultToy extends Toy{
         return this;
     }
 
+    @Override
     public boolean isAdult() {
         return isAdult;
     }

@@ -1,6 +1,7 @@
 package com.andremapa.modulo3_POOII.exercicio3.domain.repositories;
 
 import com.andremapa.modulo3_POOII.exercicio3.domain.models.Product;
+import com.andremapa.modulo3_POOII.exercicio3.exceptions.DatabaseIllegalTransaction;
 import com.andremapa.modulo3_POOII.exercicio3.exceptions.ResourceNotFoundException;
 
 import java.util.ArrayList;
@@ -18,7 +19,15 @@ public class DatabaseRepositoryImpl implements DatabaseRepository{
     }
 
     @Override
+    public void saveProductList(List<Product> entities){
+        database.addAll(entities);
+    }
+
+    @Override
     public List<Product> findAll(){
+        if (database.isEmpty()){
+            throw new DatabaseIllegalTransaction("The stock is Empty! Please insert a product!");
+        }
         return database;
     }
 
